@@ -1,17 +1,13 @@
+import { Navigate, Route, Routes } from 'react-router-dom';
+import HomePage from './pages/home';
 import './styles/app.less';
 
 function App() {
   return (
-    <main className="app-shell">
-      <section className="hero-card">
-        <p className="eyebrow">HAND-FEEL-LAB</p>
-        <h1>React maintenance practice starts here.</h1>
-        <p className="description">
-          We are not building a perfect product first. We are building a small,
-          runnable stage for many tiny, repeatable commits.
-        </p>
-      </section>
-    </main>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   );
 }
 
